@@ -22,20 +22,12 @@ class ViewController: UIViewController {
             datas.append("test")
         }
 
-//        footer.hidden = true
-
-        tableView.tableFooterView = nil
-
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(5 * Double(NSEC_PER_SEC)))
-        dispatch_after(delayTime, dispatch_get_main_queue()) {
-            print("test")
+        delay(5) {
             self.tableView.tableFooterView = self.footer
             self.tableView.reloadData()
         }
 
-        let delayTime2 = dispatch_time(DISPATCH_TIME_NOW, Int64(10 * Double(NSEC_PER_SEC)))
-        dispatch_after(delayTime2, dispatch_get_main_queue()) {
-            print("test 2")
+        delay(10) {
             self.tableView.tableFooterView = nil
             self.tableView.reloadData()
         }
